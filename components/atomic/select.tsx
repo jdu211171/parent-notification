@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
 
 const PopupMenu = ({
                      options,
+                     selectedValue
                    }: {
   options: Array<{
     icon: string;
@@ -46,9 +47,10 @@ const PopupMenu = ({
     lightColor: string;
     darkColor: string;
   }>;
+  selectedValue: { icon: string; label: string; action: () => void; lightColor: string; darkColor: string; };
 }) => {
   const [showMenu, setShowMenu] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(options[0]);
+  const [selectedOption, setSelectedOption] = useState(selectedValue || options[0])
   const handleToggleMenu = () => setShowMenu(!showMenu);
   const handleMenuOption = (option: any) => {
     option.action();

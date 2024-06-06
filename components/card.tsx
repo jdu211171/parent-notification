@@ -20,7 +20,7 @@ const Card = (props: CardProps) => {
             <HelloWave/>
           </ThemedView>
         )}
-        <ThemedText type='default' style={styles.titleText}>
+        <ThemedText type='default' style={props.isRead ? null : {marginRight: 20}}>
           {props.title}
         </ThemedText>
       </ThemedView>
@@ -49,9 +49,6 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     padding: 5,
-  },
-  titleText: {
-    marginRight: 10,
   },
   dateRow: {
     flexDirection: 'row',
