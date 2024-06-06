@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet, Pressable} from 'react-native';
+import {TabBarIcon} from "@/components/navigation/TabBarIcon";
 
 const styles = StyleSheet.create({
   container: {
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
     padding: 8,
     position: 'absolute',
     top: '100%',
-    left: 20,
+    left:   82,
     marginLeft: -80,
     borderColor: '#D1D5DB',
     borderWidth: 1,
@@ -33,6 +34,15 @@ const styles = StyleSheet.create({
   },
   optionText: {
     color: '#4A5568',
+  },
+  selectPlaceholder: {
+    padding: 8,
+    borderRadius: 4,
+    borderColor: '#D1D5DB',
+    borderWidth: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
 
@@ -62,9 +72,10 @@ const PopupMenu = ({
   }
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={handleToggleMenu}>
+      <Pressable onPress={handleToggleMenu} style={styles.selectPlaceholder}>
         <Text>{selectedOption.label}</Text>
-      </TouchableOpacity>
+        <TabBarIcon name={showMenu ? 'chevron-up' : 'chevron-down'} size={18} />
+      </Pressable>
 
       {showMenu && (
         <View style={styles.menu}>

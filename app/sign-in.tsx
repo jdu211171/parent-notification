@@ -48,45 +48,11 @@ const styles = StyleSheet.create({
   },
 });
 
-// const translations = {
-//   en: {
-//     welcome: 'Welcome Back',
-//     login: 'Login to access your account',
-//     email: 'Email',
-//     enterEmail: 'Enter email here',
-//     password: 'Password',
-//     enterPassword: 'Enter password here',
-//     loginToAccount: 'Login to Account',
-//     forgotPassword: 'Forgot your password?',
-//     resetPassword: 'reset password',
-//   },
-//   ja: {
-//     welcome: 'お帰りなさい',
-//     login: 'アカウントにログイン',
-//     email: 'メールアドレス',
-//     enterEmail: 'メールアドレスを入力',
-//     password: 'パスワード',
-//     enterPassword: 'パスワードを入力',
-//     loginToAccount: 'アカウントにログイン',
-//     forgotPassword: 'パスワードを忘れましたか？',
-//     resetPassword: 'パスワードをリセット',
-//   },
-// };
-// const i18n = new I18n(translations);
-
-// Set the locale once at the beginning of your app.
-// i18n.locale = getLocales()[0].languageCode ?? 'en';
-
-// When a value is missing from a language it'll fall back to another language with the key present.
-// i18n.enableFallback = true;
-// To see the fallback mechanism uncomment the line below to force the app to use the Japanese language.
-// i18n.locale = 'ja';
-
 export default function SignIn() {
   const {signIn} = useSession();
   const { language, i18n, setLanguage } = useContext(I18nContext);
   const  toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'ja' : 'en');
+    setLanguage(language === 'en' ? 'en' : 'ja');
   };
   const menuOptions = [
     {
@@ -122,7 +88,7 @@ export default function SignIn() {
               </Text>
             </View>
             <View>
-              <Select options={menuOptions} selectedValue={language === 'ja' ? menuOptions[1] : menuOptions[1]}/>
+              <Select options={menuOptions} selectedValue={language === 'en' ? menuOptions[0] : menuOptions[1]}/>
             </View>
           </View>
           <Input
