@@ -6,8 +6,15 @@ import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import Button from "@/components/atomic/button";
+import {router} from "expo-router";
+import {useSession} from "@/contexts/auth-context";
 
 export default function TabTwoScreen() {
+  const { signOut } = useSession();
+  const handlePress = () => {
+    signOut();
+  };
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
@@ -84,6 +91,7 @@ export default function TabTwoScreen() {
           ),
         })}
       </Collapsible>
+      <Button onPress={handlePress} title="Logout" />
     </ParallaxScrollView>
   );
 }

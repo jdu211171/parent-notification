@@ -1,5 +1,6 @@
 {
   "expo": {
+    "runtimeVersion": "1.0.0",
     "name": "parent-notification",
     "slug": "parent-notification",
     "version": "1.0.0",
@@ -13,13 +14,18 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.jduapp.parentnotification",
+      "infoPlist": {
+        "CFBundleAllowMixedLocalizations": true
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.jduapp.parentnotification"
     },
     "web": {
       "bundler": "metro",
@@ -27,10 +33,20 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "expo-secure-store",
+      "expo-font",
+      "expo-localization"
     ],
     "experiments": {
-      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "692b1cd9-10bf-4a05-8bc8-2704163a2a4b"
+      }
     }
   }
 }
