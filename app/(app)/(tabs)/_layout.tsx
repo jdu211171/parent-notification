@@ -31,6 +31,7 @@ export default function TabLayout() {
           tabBarIcon: ({color, focused}) => (
             <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color}/>
           ),
+          // headerShown: false,
         }}
       />
       <Tabs.Screen

@@ -1,0 +1,73 @@
+import {useEffect} from "react";
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await fetch('https://e45np4n3jb.execute-api.ap-northeast-1.amazonaws.com/mock/posts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${JSON.parse(token.session as string).access_token}`,
+        },
+        body: JSON.stringify({
+          "student_id": 1,
+          "last_post_id": 0
+        }),
+      });
+      const data = await response.json();
+      const statement = await db.prepareAsync(
+        'INSERT OR IGNORE INTO message (id, title, content, priority, group_name, image) VALUES ($id, $title, $content, $priority, $group_name, $image)'
+      );
+      for (const item of data) {
+        try {
+          await statement.executeAsync({ $id: item.id, $title: item.title, $content: item.description, $priority: item.priority, $group_name: item.group_name, $image: item.image });
+        } catch (error) {
+          console.error('Error:', error);
+        } finally {
+          await statement.finalizeAsync();
+        }
+      }
+      setMessages(data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+  fetchData()
+    .then();
+}, []);
+
+
+  useEffect(() => {
+    const unsubscribe = NetInfo.addEventListener(async state => {
+      if (state.isConnected) {
+        const data = await fetchMessagesFromAPI();
+        const paramsArray = data.map((item: { id: any; title: any; description: any; priority: any; group_name: any; image: any; }) => ({
+          $id: item.id,
+          $title: item.title,
+          $content: item.description,
+          $priority: item.priority,
+          $group_name: item.group_name,
+          $image: item.image
+        }));
+
+        await database.prepareAsyncQuery(
+          'INSERT OR IGNORE INTO message (id, title, content, priority, group_name, image) VALUES ($id, $title, $content, $priority, $group_name, $image)',
+          paramsArray
+        );
+        await database.prepareAsyncQuery(
+          'INSERT OR IGNORE INTO message (id, title, content, priority, group_name, image) VALUES ($id, $title, $content, $priority, $group_name, $image)',
+          paramsArray
+        );
+
+        setMessages(data);
+      } else {
+        const data = await fetchMessagesFromDB();
+        setMessages(data as Message[]);
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);

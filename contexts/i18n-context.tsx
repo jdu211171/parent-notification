@@ -37,7 +37,7 @@ interface I18nProviderProps {
 
 export const I18nProvider = ({ children }: I18nProviderProps) => {
   const [language, setLanguage] = useState<Language>(
-    (getLocales()[0].languageCode as Language) || 'en'
+    /*(getLocales()[0].languageCode as Language) || */'en'
   );
 
   return (

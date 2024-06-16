@@ -1,0 +1,86 @@
+### login
+POST https://e45np4n3jb.execute-api.ap-northeast-1.amazonaws.com/mock/login
+Content-Type: application/json
+Accept: Application/json
+
+{
+  "email": "johndoe@gmail.com",
+  "password": "12345678"
+}
+
+### refresh token
+POST https://e45np4n3jb.execute-api.ap-northeast-1.amazonaws.com/mock/refresh-token
+Content-Type: application/json
+Accept: Application/json
+
+{
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvZSBEb2UiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNTE2MjM5MDIyfQ"
+}
+
+### verify account
+POST https://e45np4n3jb.execute-api.ap-northeast-1.amazonaws.com/mock/verify-account
+Content-Type: application/json
+Accept: Application/json
+
+{
+  "email": "johndoe@gmail.com",
+  "code": "4321"
+}
+
+### posts
+POST https://e45np4n3jb.execute-api.ap-northeast-1.amazonaws.com/mock/posts
+Content-Type: application/json
+Accept: Application/json
+Authorization: Bearer gh83naskdjfhs89dfjasdflkjasdf.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvZSBEb2UiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNTE2MjM5MDIyfQ
+
+{
+  "student_id": 1,
+  "last_post_id": 0
+}
+
+### parent info
+GET https://e45np4n3jb.execute-api.ap-northeast-1.amazonaws.com/mock/parent
+Content-Type: application/json
+Accept: Application/json
+Authorization: Bearer gh83naskdjfhs89dfjasdflkjasdf.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvZSBEb2UiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNTE2MjM5MDIyfQ
+
+### change password
+POST https://e45np4n3jb.execute-api.ap-northeast-1.amazonaws.com/mock/change-password
+Content-Type: application/json
+Accept: Application/json
+Authorization: Bearer gh83naskdjfhs89dfjasdflkjasdf.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvZSBEb2UiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNTE2MjM5MDIyfQ
+
+{
+  "old_password": "12345678",
+  "new_password": "87654321"
+}
+
+### students
+GET https://e45np4n3jb.execute-api.ap-northeast-1.amazonaws.com/mock/students
+Content-Type: application/json
+Accept: Application/json
+Authorization: Bearer gh83naskdjfhs89dfjasdflkjasdf.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvZSBEb2UiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNTE2MjM5MDIyfQ
+
+### forms
+GET https://e45np4n3jb.execute-api.ap-northeast-1.amazonaws.com/mock/forms
+Content-Type: application/json
+Accept: Application/json
+Authorization: Bearer gh83naskdjfhs89dfjasdflkjasdf.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvZSBEb2UiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNTE2MjM5MDIyfQ
+
+### create form
+POST https://e45np4n3jb.execute-api.ap-northeast-1.amazonaws.com/mock/forms
+Content-Type: application/json
+Accept: Application/json
+Authorization: Bearer gh83naskdjfhs89dfjasdflkjasdf.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvZSBEb2UiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNTE2MjM5MDIyfQ
+
+{
+  "reason": "other",
+  "additional_message": "My kid leaving early",
+  "date": "2023-05-22 15:30:00",
+  "student_id": 1
+}
+
+
+
+
+

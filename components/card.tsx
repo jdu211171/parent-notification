@@ -13,10 +13,10 @@ interface CardProps {
 
 const Card = (props: CardProps) => {
   return (
-    <ThemedView style={[styles.container/*, {backgroundColor: 'black'}*/]}>
-      <ThemedView style={[styles.titleRow/*, {backgroundColor: 'black'}*/]}>
+    <ThemedView style={styles.container}>
+      <ThemedView style={styles.titleRow}>
         {props.isRead ? null : (
-          <ThemedView style={[styles.iconContainer/*, {backgroundColor: 'black'}*/]}>
+          <ThemedView style={styles.iconContainer}>
             <HelloWave/>
           </ThemedView>
         )}
@@ -24,10 +24,10 @@ const Card = (props: CardProps) => {
           {props.title}
         </ThemedText>
       </ThemedView>
-      <ThemedView style={[styles.dateRow/*, {backgroundColor: 'black'}*/]}>
+      <ThemedView style={styles.dateRow}>
         <ThemedText style={styles.dateText}>{props.date}</ThemedText>
       </ThemedView>
-      <ThemedView style={[styles.descriptionRow/*, {backgroundColor: 'black'}*/]}>
+      <ThemedView style={styles.descriptionRow}>
         <ThemedText>{props.description}</ThemedText>
       </ThemedView>
       <TouchableOpacity style={styles.readMoreButton}>

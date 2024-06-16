@@ -10,13 +10,15 @@ import {getLocales} from "expo-localization";
 import {I18n} from "i18n-js";
 import translations from "@/translations/translation";
 import {I18nContext} from "@/contexts/i18n-context";
-import {useContext} from "react";
+import React, {useContext, useRef, useState} from "react";
+import Toast from 'react-native-root-toast';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 12,
     backgroundColor: 'white',
+    alignContent: 'center'
   },
   header: {
     flexDirection: 'row',
@@ -49,6 +51,8 @@ const styles = StyleSheet.create({
 });
 
 export default function SignIn() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const {signIn} = useSession();
   const { language, i18n, setLanguage } = useContext(I18nContext);
   const  toggleLanguage = () => {
@@ -70,9 +74,26 @@ export default function SignIn() {
       darkColor: '#ff8c66',
     },
   ];
+
   const handlePress = () => {
-    signIn();
-    router.replace('/');
+    signIn(email, password)
+      .then(() => {
+        console.log('email', email)
+        console.log('password', password)
+      })
+      .catch((reason) => {
+      let toast = Toast.show(`${reason}`, {
+        duration: Toast.durations.LONG,
+        position: Toast.positions.BOTTOM,
+        shadow: true,
+        animation: true,
+        hideOnPress: true,
+        containerStyle: {
+          backgroundColor: '#ff0000',
+          borderRadius: 5,
+        }
+      });
+    })
   };
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -94,12 +115,14 @@ export default function SignIn() {
           <Input
             label={i18n[language].email}
             placeholder={i18n[language].enterEmail}
-            onChangeText={text => console.log(text)}
+            onChangeText={setEmail}
+            onBlur={e => console.log('onBlur', e.nativeEvent.text)}
           />
           <SecureInput
             label={i18n[language].password}
             placeholder={i18n[language].enterPassword}
-            onChangeText={text => console.log(text)}
+            onChangeText={setPassword}
+            onBlur={e => console.log('onBlur', e.nativeEvent.text)}
           />
           <Button onPress={handlePress} title={i18n[language].loginToAccount}/>
           <View style={styles.buttonContainer}>
