@@ -5,7 +5,7 @@ const Layout = () => {
   return (
     <Stack>
       <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="message/[id]" />
+      <Stack.Screen name="message/[id]" options={{ headerTitle: 'Detailed view', headerTitleAlign: 'center' }} />
     </Stack>
   );
 };

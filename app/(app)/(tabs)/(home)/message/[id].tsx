@@ -32,13 +32,13 @@ export default function DetailsScreen() {
       setMessage(result as Message);
     };
 
+    const updateMessage = async () => {
+      await db.runAsync('UPDATE message SET read_status = 1 WHERE id = ?', [Number(id)]);
+    };
     fetchMessage()
         .then(() => setLoading(false));
+    updateMessage().then(r => console.log(r));
   }, [id]);
-
-  useEffect(() => {
-    console.log(message);
-  }, [message]);
 
   if (loading && !message) {
     return <ThemedText>Loading...</ThemedText>;
@@ -56,6 +56,9 @@ export default function DetailsScreen() {
         </ThemedView>
         <ThemedView style={styles.descriptionRow}>
           <ThemedText>{message?.content}</ThemedText>
+        </ThemedView>
+        <ThemedView>
+          {/*<ThemedText>{message?.read_status}</ThemedText>*/}
         </ThemedView>
       </ThemedView>
   );
