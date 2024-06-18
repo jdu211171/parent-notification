@@ -4,29 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb4fae82-3f1d-4749-af00-66fbb63e9e0c" name="Changes" comment="sign-in page select component fixed, select icon added">
-      <change afterPath="$PROJECT_DIR$/archive/trash.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/database/database.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/info.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/success.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/http/auth.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="cb4fae82-3f1d-4749-af00-66fbb63e9e0c" name="Changes" comment="sqlite database implemented">
+      <change afterPath="$PROJECT_DIR$/app/(app)/(tabs)/(home)/_layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(app)/(tabs)/(home)/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(app)/(tabs)/(home)/message/[id].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(app)/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/(tabs)/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(app)/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(app)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sign-in.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/sign-in.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(app)/(tabs)/index.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contexts/auth-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/contexts/auth-context.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contexts/i18n-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/contexts/i18n-context.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contexts/language-context.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/reset-project.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/reset-project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +23,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTTP Request" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="feature/database" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -89,8 +75,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/database&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/clear/WebstormProjects/parent-notification/assets/database&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/clear/WebstormProjects/parent-notification/utils&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -105,21 +91,21 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utils" />
       <recent name="$PROJECT_DIR$/assets/database" />
       <recent name="$PROJECT_DIR$/app/(app)/(tabs)/card" />
       <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/components" />
-      <recent name="$PROJECT_DIR$/assets/fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/(app)/(tabs)/(home)/message" />
+      <recent name="$PROJECT_DIR$/app/(app)/(tabs)/index" />
       <recent name="$PROJECT_DIR$/app/(app)/(tabs)" />
       <recent name="$PROJECT_DIR$/app/(app)/(tabs)/card" />
       <recent name="$PROJECT_DIR$/app/(app)" />
-      <recent name="$PROJECT_DIR$/assets/images" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="HTTP Request.auth | posts">
+  <component name="RunManager" selected="npm.start -- --reset-cache">
     <configuration name="auth | login" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/http/auth.http" requestIdentifier="login" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -144,8 +130,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.auth | posts" />
         <item itemvalue="npm.start -- --reset-cache" />
+        <item itemvalue="HTTP Request.auth | posts" />
         <item itemvalue="HTTP Request.auth | login" />
       </list>
     </recent_temporary>
@@ -180,6 +166,7 @@
       <workItem from="1718429172753" duration="10567000" />
       <workItem from="1718514798264" duration="4958000" />
       <workItem from="1718523190281" duration="5999000" />
+      <workItem from="1718591637430" duration="14455000" />
     </task>
     <task id="LOCAL-00001" summary="navigation, screens">
       <option name="closed" value="true" />
@@ -211,7 +198,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feature/database" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

@@ -95,25 +95,11 @@ function HomeScreen() {
       <SafeAreaView style={styles.container}>
         <ThemedView>
           <ScrollView>
-            {messages.map((messages, index) => (
+            {messages.map((message, index) => (
               <React.Fragment key={index}>
-                {messages.viewed_at ? (
-                  <ThemedView style={styles.cardOpacity}>
                     <Card
-                      title={messages.title}
-                      description={messages.description}
-                      date={messages.viewed_at}
-                      isRead={true}
+                      message={message}
                     />
-                  </ThemedView>
-                ) : (
-                  <Card
-                    title={messages.title}
-                    description={messages.description}
-                    date={messages.viewed_at}
-                    isRead={false}
-                  />
-                )}
                 <Separator orientation="horizontal"/>
               </React.Fragment>
             ))}

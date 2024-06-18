@@ -3,32 +3,33 @@ import {View, TouchableOpacity, StyleSheet} from 'react-native';
 import {HelloWave} from "@/components/HelloWave";
 import {ThemedText} from "@/components/ThemedText";
 import {ThemedView} from './ThemedView';
+import {Link} from "expo-router";
 
-interface CardProps {
+interface Message {
   title: string;
-  date: string;
+  date?: string;
   description: string;
-  isRead?: boolean;
+  viewed_at?: string;
 }
 
-const Card = (props: CardProps) => {
+const Card = ({ message }: { message: Message }) => {
   return (
     <ThemedView style={styles.container}>
       <ThemedView style={styles.titleRow}>
-        {props.isRead ? null : (
+        {message.viewed_at !== '' ? null : (
           <ThemedView style={styles.iconContainer}>
             <HelloWave/>
           </ThemedView>
         )}
-        <ThemedText type='default' style={props.isRead ? null : {marginRight: 20}}>
-          {props.title}
+        <ThemedText type='default' style={message.viewed_at ? null : {marginRight: 20}}>
+          {message.title}
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.dateRow}>
-        <ThemedText style={styles.dateText}>{props.date}</ThemedText>
+        <ThemedText style={styles.dateText}>{message.date || '21 Oct 2017'}</ThemedText>
       </ThemedView>
       <ThemedView style={styles.descriptionRow}>
-        <ThemedText>{props.description}</ThemedText>
+        <ThemedText>{message.description}</ThemedText>
       </ThemedView>
       <TouchableOpacity style={styles.readMoreButton}>
         <ThemedText style={styles.readMoreText}>
@@ -63,6 +64,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 5,
+    flex: 1,
   },
   readMoreButton: {
     marginTop: 5,
